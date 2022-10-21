@@ -1,17 +1,10 @@
 {
-  "env": {
-    "test": {
-      "presets": ["env"]
-    },
-    "production": {
-      "presets": [
-        ["env", {
-          "modules": false
-        }]
-      ],
-      "plugins": [
-        "external-helpers"
-      ]
-    }
-  }
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ]
+  ]
 }
