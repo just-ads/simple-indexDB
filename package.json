@@ -1,7 +1,7 @@
 {
   "name": "simple-indexdb",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Using indexDB with simple object storage",
   "main": "dist/sIndexDB.js",
   "type": "module",
   "files": [
@@ -9,8 +9,9 @@
   ],
   "scripts": {
     "test": "jest --coverage",
-    "build": "yarn test && cross-env NODE_ENV=production rollup -c",
-    "dev": "standard && cross-env NODE_ENV=production rollup -c"
+    "build": "yarn test && standard --fix && standard && cross-env NODE_ENV=production rollup -c",
+    "dev": "cross-env NODE_ENV=production rollup -c",
+    "release": "npm publish --registry http://81.69.243.156:4873/"
   },
   "repository": {
     "type": "git",
@@ -28,8 +29,10 @@
     "@rollup/plugin-babel": "^6.0.0",
     "@rollup/plugin-commonjs": "^23.0.1",
     "@rollup/plugin-node-resolve": "^15.0.0",
+    "babel-jest": "^29.2.1",
     "cross-env": "^7.0.3",
     "jest": "^29.2.1",
+    "jest-environment-jsdom": "^29.2.1",
     "rollup": "^3.2.3",
     "standard": "^16.0.4"
   },
@@ -42,6 +45,9 @@
     ],
     "collectCoverageFrom": [
       "src/*.js"
-    ]
+    ],
+    "clearMocks": true,
+    "coverageProvider": "v8",
+    "testEnvironment": "jsdom"
   }
 }

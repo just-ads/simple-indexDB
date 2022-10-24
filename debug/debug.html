@@ -9,8 +9,12 @@
 
 </body>
 <script>
-  simpleIndexDB.load().then(() => {
+  simpleIndexDB.load().then(db => {
     console.log('数据库打开成功！')
+    simpleIndexDB.set("task", { taskTitle: "Walk dog", hours: 19, minutes: 30, day: 24, month: "December", year: 2013, notified: "no" })
+    simpleIndexDB.get("task").then(res => {
+      console.log(res)
+    })
   })
 </script>
 </html>
