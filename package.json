@@ -17,7 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/PZD2937/simple-indexDB.git"
   },
-  "keywords": [],
+  "keywords": [
+    "indexDB"
+  ],
   "author": "ADS <pzd2934970779@gmail.com>",
   "license": "MIT",
   "bugs": {
