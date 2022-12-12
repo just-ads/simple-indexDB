@@ -6,15 +6,26 @@
     <script src="../dist/sIndexDB.umd.js"></script>
 </head>
 <body>
+<div id="info">
 
+</div>
+<div id="content">
+
+</div>
 </body>
 <script>
+  const infoEl = document.getElementById('info')
+  const contentEl = document.getElementById('content')
   simpleIndexDB.load().then(db => {
-    console.log('数据库打开成功！')
+    infoEl.innerText = '数据库打开成功！'
     simpleIndexDB.set("task", { taskTitle: "Walk dog", hours: 19, minutes: 30, day: 24, month: "December", year: 2013, notified: "no" })
     simpleIndexDB.get("task").then(res => {
       console.log(res)
+      contentEl.innerText = "task：" + JSON.stringify(res);
     })
+  }).catch(err => {
+    console.error(err);
+    infoEl.innerText = '数据库打开失败'
   })
 </script>
 </html>

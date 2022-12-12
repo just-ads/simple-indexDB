@@ -1,6 +1,6 @@
 {
   "name": "simple-indexdb",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Using indexDB with simple object storage",
   "main": "dist/sIndexDB.js",
   "type": "module",
